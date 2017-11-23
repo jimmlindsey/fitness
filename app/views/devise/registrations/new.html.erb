@@ -1,0 +1,36 @@
+<div class="container content form">
+
+  <strong>Create an account</strong>
+  <span class="pull-right"><h6>or </h6><a href="/login"><h6>sign in</h6></a></span>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <br>
+  
+  <div class="form-group">
+    <%= f.text_field :fullname, :class => "validate", autofocus: true, :placeholder => "Name", class: "form-control" %>
+  </div>
+  
+  <br>
+
+  <div class="form-group">
+    <%= f.email_field :email, :class => "validate", :placeholder => "Email", class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "off", :class => "validate", :placeholder => "Password", class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Sign up", :class => "btn btn-new" %>
+  </div>
+  <% end %>
+
+  <br>
+  
+</div>

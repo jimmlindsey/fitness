@@ -1,0 +1,17 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$white:                           #ffffff;
+$black:                           #000000;
+$dark:                            #47535b;
+$medium:                          #7a8b8e;
+$light:                           #9a9da4;
+$primary:                         #007ee5;
+$border:                          #e8e8e8;
+$background:                      #f6f9fb;
+
+body {
+  font-family: "proxima-nova",sans-serif;
+}
+
+@import 'styles';

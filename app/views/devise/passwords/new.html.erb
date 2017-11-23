@@ -1,0 +1,25 @@
+<div class="container content form">
+
+  <strong>Reset your password</strong>
+  <span class="pull-right"><h6>or </h6><a href="/login"><h6>sign in</h6></a></span>
+
+  <br>  
+  <br>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, :placeholder => "Email", class: "form-control" %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Reset password", :class => "btn btn-new" %>
+    </div>
+  <% end %>
+
+  <br>
+
+</div>
