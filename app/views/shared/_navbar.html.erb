@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Gymly", root_path, class: "navbar-brand" %>
+      <%= link_to 'gymly',root_path, :class => "navbar-brand" %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       
@@ -16,8 +16,8 @@
       <ul class="nav navbar-nav navbar-right">
 
         <% if (!user_signed_in?) %>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
+            <li class="nav-button"><%= link_to 'Get Started', new_user_registration_path, :class => "btn btn-nav" %></li>
         <% else %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"

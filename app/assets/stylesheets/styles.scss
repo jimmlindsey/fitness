@@ -68,11 +68,19 @@ $background:                      #f6f9fb;
 
 .container.content {
   min-height: 740px;
+  padding-top: 50px;
 }
 
 .container.content.form {
   min-height: 740px;
+  padding-top: 100px;
   max-width: 400px;
+}
+
+.container.content.edit {
+  min-height: 740px;
+  padding-top: 50px;
+  max-width: 500px;
 }
 
 .container.profile {
@@ -120,6 +128,7 @@ $background:                      #f6f9fb;
   background-color: white;
   border: 1px solid $border;
   border-radius: 25px;
+  margin: -10px;
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
   height: 40px;

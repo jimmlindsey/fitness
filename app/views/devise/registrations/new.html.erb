@@ -4,7 +4,7 @@
   <span class="pull-right"><h6>or </h6><a href="/login"><h6>sign in</h6></a></span>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= render 'shared/devisemes' %>
 
   <br>
   

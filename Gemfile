@@ -20,6 +20,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'devise', '~> 4.2'
 gem 'paperclip', '~> 5.1'
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
