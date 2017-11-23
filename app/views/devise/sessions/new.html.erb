@@ -1,7 +1,7 @@
 <div class="container content form">
 
   <strong>Sign in</strong>
-  <span class="pull-right"><h6>or </h6><a href="/register"><h6>sign up</h6></a></span>
+  <span class="pull-right"><h6>or </h6><a href="/registration"><h6>sign up</h6></a></span>
 
   <br>
   <br>
@@ -35,5 +35,11 @@
   <% end %>
 
   <br>
+  
+  <div class="or"> <h6>or</h6> </div>
+  
+  <br>
+  
+  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-facebook" %>
   
 </div>
