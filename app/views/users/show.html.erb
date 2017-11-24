@@ -21,7 +21,7 @@
       <div class="card d-md-block d-lg-block mb-4">
         <div class="card-body">
           <% if @user == current_user %>
-          <h6 class="mb-3">About <small>· <%= link_to "Edit", edit_user_registration_path %></small></h6>
+          <h6 class="mb-3"><%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %></h6>
           <% end %>
           <ul class="list-unstyled list-spaced">
             <li><span class="text-muted mr-3 text-center pull-left"></span>Certification: <%= @user.certification %></li>
