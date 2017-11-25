@@ -3,13 +3,23 @@ $black:                           #000000;
 $dark:                            #47535b;
 $medium:                          #7a8b8e;
 $light:                           #9a9da4;
-$primary:                         #007ee5;
+$primary:                         #4285f4;
 $border:                          #e8e8e8;
 $background:                      #f6f9fb;
+$facebook:                        #3b5998;
 
 body {
   font-family: "proxima-nova",sans-serif;
   padding-top: 100px;
+}
+
+.sidebar li {
+  text-decoration: none;
+  list-style: none;
+  line-height: 2;
+  a {
+    color: $dark
+  }
 }
 
 /* Navigation */
@@ -132,7 +142,7 @@ body {
 
 .btn.btn-facebook {
   outline: none;
-  background: $primary;
+  background: $facebook;
   border: none;
   border-radius: 0.25rem;
   width: 100%;
@@ -145,12 +155,14 @@ body {
 }
 
 .btn.btn-facebook:hover {
-  background: $primary;
+  background: $facebook;
   opacity:  0.9;
   color: $white;
 }
 
 .btn-primary {
+  background: $primary;
+  color: $white;
   border-radius: 0.25rem;
 }
 
