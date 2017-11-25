@@ -164,6 +164,7 @@ body {
   background: $primary;
   color: $white;
   border-radius: 0.25rem;
+  border: none;
 }
 
 
@@ -277,7 +278,9 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 }
 
 textarea {
-	min-height: 10em;
+  min-height: 10em;
+  box-shadow: none !important;
+  border: 2px solid $border !important;
 }
 
 input[type="submit"], .button {
