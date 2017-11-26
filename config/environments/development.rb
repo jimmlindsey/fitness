@@ -70,8 +70,8 @@ Rails.application.configure do
     s3_host_name: 's3-us-west-1.amazonaws.com',
     s3_credentials: {
       bucket: 'evergym',
-      access_key_id: 'AKIAJPQJGV4JNHF3NBQA',
-      secret_access_key: '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',
+      access_key_id: ENV["amazon_access_key_id"],
+      secret_access_key: ENV["amazon_secret_access_key"],
       s3_region: 'us-west-1'
     }
   }

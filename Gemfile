@@ -24,6 +24,7 @@ gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'aws-sdk', '~> 2.8'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
