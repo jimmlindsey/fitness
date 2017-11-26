@@ -376,3 +376,55 @@ input[type="checkbox"]:checked:before {
   text-decoration: none;
   color: $black;
 }
+
+
+/* PHOTO UPLOAD */
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  background: $white;
+  border: 2px solid $border;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 3em;
+  text-align: center;
+  font-size: 1.1em;
+  color: $dark;
+  text-decoration: none;
+  padding: 10px 25px 10px 25px;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.panel-heading.preview {
+  padding: 0;
+}
+
+.panel-heading.preview img {
+  width: 100%;
+}
+
+.panel-default .panel-heading {
+  color: $dark;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card.d-md-block.d-lg-block.mb-4.photos {
+  min-height: 400px;
+}
