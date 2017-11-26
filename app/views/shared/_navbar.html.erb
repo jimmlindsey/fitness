@@ -25,8 +25,8 @@
                     <span class="caret round-image-40"><%= image_tag(current_user.avatar.url(:thumb)) %></span>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Manage Listing" %></li>
-                <li><%= link_to "List Your Space" %></li>
+                <li><%= link_to "Manage Your Listings", rooms_path %></li>
+                <li><%= link_to "List Your Space", new_room_path %></li>
                 <li><%= link_to "Your Reservations" %></li>
                 <li><%= link_to "Your Trips" %></li>
                 <li><%= link_to "Profile", user_path(current_user.id) %></li>

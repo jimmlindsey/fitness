@@ -24,13 +24,24 @@
           <h6 class="mb-3"><%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %></h6>
           <% end %>
           <ul class="list-unstyled list-spaced">
+            <% if !@user.certification.blank? %>
             <li><span class="text-muted mr-3 text-center pull-left"></span>Certification: <%= @user.certification %></li>
             <hr>
+            <% end %>
+            
+            <% if !@user.certification_number.blank? %>
             <li><span class="text-muted mr-3 pull-left"></span>Certification Number: <%= @user.certification_number %></li>
             <hr>
+            <% end %>
+            
+            <% if !@user.insurance.blank? %>
             <li><span class="text-muted mr-3 pull-left"></span>Insurance Number: <%= @user.insurance %></li>
+            <% end %>
+            
+            <% if !@user.phone_number.blank? %>
             <hr>
             <li><span class="text-muted mr-3 pull-left"></span>Phone Number: <%= @user.phone_number %></li>
+            <% end %>
           </ul>
         </div>
       </div>
