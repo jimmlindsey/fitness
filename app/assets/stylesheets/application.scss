@@ -7,12 +7,14 @@ $black:                           #000000;
 $dark:                            #47535b;
 $medium:                          #7a8b8e;
 $light:                           #9a9da4;
-$primary:                         #007ee5;
+$primary:                         #4285f4;
 $border:                          #e8e8e8;
-$background:                      #f6f9fb;
+$background:                      #f5f8fa;
+$facebook:                        #3b5998;
 
 body {
   font-family: "proxima-nova",sans-serif;
+  background-color: $background;
 }
 
 @import 'styles';

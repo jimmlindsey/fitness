@@ -1,16 +1,25 @@
-$white:                           #ffffff;
-$black:                           #000000;
-$dark:                            #47535b;
-$medium:                          #7a8b8e;
-$light:                           #9a9da4;
-$primary:                         #4285f4;
-$border:                          #e8e8e8;
-$background:                      #f6f9fb;
-$facebook:                        #3b5998;
-
 body {
   font-family: "proxima-nova",sans-serif;
   padding-top: 100px;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: 600 !important;
+}
+
+h4 {
+  font-weight: bold;
 }
 
 .sidebar li {
@@ -404,4 +413,16 @@ input[type="checkbox"]:checked:before {
 
 .pull-right h6 {
   display: inline;
+}
+
+
+/* ROOM SHOW */
+.amenities li {
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+.amenities .text-line-through {
+  text-decoration: line-through;
+  color: rgba(0,0,0,0.45);
 }
