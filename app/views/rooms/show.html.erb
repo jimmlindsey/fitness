@@ -183,7 +183,7 @@
                             </div>
                             <div class="panel-body">
                               <%= link_to room.listing_name, room %><br/>
-                              (<%= room.distance.round(2) %> kms away)
+                              (<%= room.distance.round(2) %> miles away)
                             </div>
                           </div>
                         </div>
@@ -195,7 +195,8 @@
 
               <!-- RIGHT PANEL -->
               <div class="col-md-4">
-                <!-- Reservation Form -->
+                <br>
+                <%= render 'reservations/form' %>
               </div>
             </div>
           </div>
