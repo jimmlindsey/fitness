@@ -26,6 +26,7 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'aws-sdk', '~> 2.8'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'geocoder', '~> 1.4'
+gem 'jquery-ui-rails', '~> 5.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
