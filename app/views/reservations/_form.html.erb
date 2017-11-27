@@ -1,17 +1,45 @@
-<%= form_for([@room, @room.reservations.new]) do |f| %>
-  <%= f.text_field :start_date %>
-  
-  <br>
-  <br>
-  <%= f.submit "Book Now", class: "btn btn-new btn-block" %>
-  
-<% end %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span>$<%= @room.price %></span>
+    <span class="pull-right">Per Day</span>
+  </div>
+  <div class="panel-body">
+    <%= form_for([@room, @room.reservations.new]) do |f| %>
+    <label>Check In</label>
+    <%= f.text_field :start_date, readonly: true, placeholder: "Check In Date", class: "form-control datepicker" %>
+    
+    <h4 class="message-alert text-center"><span id="message"></span></h4>
+      <div id="preview" style="display: none">
+        <table class="reservation-table">
+          <tbody>
+            <tr>
+              <td>Price</td>
+              <td class="text-right">$<%= @room.price %></td>
+            </tr>
+            <tr>
+              <td>Day</td>
+              <td class="text-right">x <span id="reservation_nights"></span></td>
+            </tr>
+            <tr>
+              <td class="total">Total</td>
+              <td class="text-right">$<span id="reservation_total"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
+    <br>
+    <br>
+    <%= f.submit "Book Now", class: "btn btn-new btn-block" %>
+
+    <% end %>
+  </div>
+</div>
 
 <script>
   $(function() {
     $('#reservation_start_date').datepicker({
-      dateFormat: 'dd-mm-yy'  
+      dateFormat: 'mm-dd-yy'  
     });  
   });
 </script>

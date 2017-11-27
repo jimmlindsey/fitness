@@ -395,8 +395,8 @@ input[type="checkbox"]:checked:before {
 .panel-default .panel-heading {
   color: #ffffff;
   background-color: $primary;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .card.d-md-block.d-lg-block.mb-4.photos {
@@ -425,4 +425,25 @@ input[type="checkbox"]:checked:before {
 .amenities .text-line-through {
   text-decoration: line-through;
   color: rgba(0,0,0,0.45);
+}
+
+
+/* RESERVATIONS */
+.reservation-table td {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #dce0e0;
+  padding: 10px;
+}
+
+.reservation-table .total td {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+}
+
+.message-alert {
+  color: #d43242;
+  font-size: 14px;
+  padding-top: 10px;
 }
