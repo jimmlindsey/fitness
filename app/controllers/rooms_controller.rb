@@ -57,6 +57,15 @@ class RoomsController < ApplicationController
     redirect_back(fallback_location: request.referer)
   end
   
+  def preview
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+
+    output = true
+
+    render json: output
+  end
+  
   private
     def set_room
       @room = Room.find(params[:id])
