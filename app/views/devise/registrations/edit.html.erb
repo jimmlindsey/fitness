@@ -28,7 +28,7 @@
         <br>
 
         <div class="form-group">
-          <%= f.text_field :title, :placeholder => "e.g. Personal Trainer", class: "form-control" %>
+          <%= f.text_field :title, :placeholder => "Title - e.g. Personal Trainer", class: "form-control" %>
         </div>
 
         <br>
@@ -48,11 +48,21 @@
           <%= f.label :description %>
           <%= f.text_area :description, rows: 5, cols: 25,  :placeholder => "Tell us what you do in 280 characters or less.", class: "form-control" %>
         </div>
-
+        
         <br>
 
         <div class="form-group">
-          <%= f.text_field :certification, :placeholder => "e.g. NSCA Strength and Conditioning Specialist", class: "form-control" %>
+          <%= f.text_field :phone_number, :placeholder => "Phone number", class: "form-control" %>
+        </div>
+
+        <br>
+        
+        <label>For Trainers, Coaches, Instructors</label>
+        
+        <br><br>
+        
+        <div class="form-group">
+          <%= f.text_field :certification, :placeholder => "Certification - e.g. NSCA Strength and Conditioning Specialist", class: "form-control" %>
         </div>
 
         <br>
@@ -66,13 +76,7 @@
         <div class="form-group">
           <%= f.text_field :insurance, :placeholder => "Insurance number", class: "form-control" %>
         </div>
-
-        <br>
-
-        <div class="form-group">
-          <%= f.text_field :phone_number, :placeholder => "Phone number", class: "form-control" %>
-        </div>
-
+        
         <br>
 
         <div class="form-group">
