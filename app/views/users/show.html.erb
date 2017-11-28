@@ -4,7 +4,11 @@
       <div class="card card-profile mb-4">
         <div class="card-header" style="background-image: url(assets/img/iceland.jpg);"></div>
         <div class="card-body text-center">
+          <% if !@user.avatar.blank? %>
           <%= image_tag @user.avatar.url, class: "card-profile-img" %>
+          <% else %>
+          <%= image_tag("missing.png", class: "card-profile-img")  %>
+          <% end %>
 
           <h6 class="card-title">
             <h5><strong><%= @user.fullname %></strong></h5>
@@ -14,7 +18,7 @@
           
           <br>
           
-          <p class="mb-4 thin"><%= @user.description %></p>
+          <p class="mb-4"><%= @user.description %></p>
         </div>
       </div>
 

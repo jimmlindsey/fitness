@@ -1,32 +1,32 @@
 <ul class="sidebar">
   <li>
-    <%= link_to "Listing", listing_room_path, class: "sidebar-link active" %>
+    <%= link_to "Listing", listing_room_path, class: "sidebar-link" %>
     <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
   </li>
   <li>
-    <%= link_to "Pricing", pricing_room_path, class: "sidebar-link active" %>
+    <%= link_to "Pricing", pricing_room_path, class: "sidebar-link" %>
     <% if !@room.price.blank? %>
       <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
   <li>
-    <%= link_to "Description", description_room_path, class: "sidebar-link active" %>
+    <%= link_to "Description", description_room_path, class: "sidebar-link" %>
     <% if !@room.listing_name.blank? %>
       <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
   <li>
-    <%= link_to "Photos", photo_upload_room_path, class: "sidebar-link active" %>
+    <%= link_to "Photos", photo_upload_room_path, class: "sidebar-link" %>
     <% if !@room.photos.blank? %>
       <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
   <li>
-    <%= link_to "Amenities", amenities_room_path, class: "sidebar-link active" %>
+    <%= link_to "Amenities", amenities_room_path, class: "sidebar-link" %>
     <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
   </li>
   <li>
-    <%= link_to "Location", location_room_path, class: "sidebar-link active" %>
+    <%= link_to "Location", location_room_path, class: "sidebar-link" %>
     <% if !@room.address.blank? %>
       <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
     <% end %>

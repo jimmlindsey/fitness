@@ -28,7 +28,7 @@
                 <li><%= link_to "Manage Your Listings", rooms_path %></li>
                 <li><%= link_to "List Your Space", new_room_path %></li>
                 <li><%= link_to "Your Reservations" %></li>
-                <li><%= link_to "Your Trips" %></li>
+                <li><%= link_to "Your Bookings", your_bookings_path %></li>
                 <li><%= link_to "Profile", user_path(current_user.id) %></li>
                 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
               </ul>
