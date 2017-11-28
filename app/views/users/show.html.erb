@@ -5,9 +5,9 @@
         <div class="card-header" style="background-image: url(assets/img/iceland.jpg);"></div>
         <div class="card-body text-center">
           <% if !@user.avatar.blank? %>
-          <%= image_tag @user.avatar.url, class: "card-profile-img" %>
+            <%= image_tag @user.avatar.url, class: "card-profile-img" %>
           <% else %>
-          <%= image_tag("missing.png", class: "card-profile-img")  %>
+            <%= image_tag("missing.png", class: "card-profile-img")  %>
           <% end %>
 
           <h6 class="card-title">

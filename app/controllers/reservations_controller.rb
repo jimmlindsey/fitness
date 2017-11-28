@@ -25,6 +25,10 @@ class ReservationsController < ApplicationController
   def your_bookings
     @bookings = current_user.reservations.order(start_date: :asc)
   end
+  
+  def your_reservations
+    @rooms = current_user.rooms
+  end
 
   def your_reservations
     @rooms = current_user.rooms

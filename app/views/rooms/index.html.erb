@@ -5,8 +5,8 @@
         <div class="card-body">
           <div class="container">
             <ul class="sidebar">
-              <li><%= link_to "Your Listings", rooms_path, class: "sidebar-link active" %></li>
-              <li class="sidebar-item"></li>
+              <li><%= link_to "Listings", rooms_path, class: "sidebar-link active" %></li>
+              <li class="sidebar-item"><%= link_to "Reservations", your_reservations_path, class: "sidebar-link" %></li>
               <li class="sidebar-item"><%= link_to "Your Bookings", your_bookings_path, class: "sidebar-link" %></li>
             </ul>
           </div>
@@ -41,7 +41,7 @@
 </div>
     <% else %>
     <div class="col-md-6 text-center">
-      <h1>You don't have any listings</h1>
+      <h1>You don't have any listings.</h1>
       <a href="/rooms/new" role="button" class="text-babu">
         <i class="fa fa-plus-circle fa-3x"></i>
       </a>
