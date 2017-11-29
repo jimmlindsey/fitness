@@ -17,7 +17,7 @@
       <div class="card d-md-block d-lg-block mb-4">
         <div class="card-body">
           <div class="container">
-            <label>Reservations</label>
+            <label><h2>Reservations</h2></label>
               <% @rooms.each do |room| %>
               <% room.reservations.each do |reservation| %>
                   <div class="row">
@@ -38,7 +38,9 @@
                         <% end %>
                       </span>
                     </div>
-                    
+                    <div class="col-md-3 text-right">
+                      <%= render partial: "reviews/host_form", locals: {reservation: reservation} %>
+                    </div>
                   </div>
                   <hr/>
 
