@@ -84,14 +84,32 @@
           </div>
         </div>
       </div>
-    </div>
-                            
-    <div class="col-lg-3">
+      <% if @guest_reviews.count > 0 %>
+      <h4>Reviews From Guests (<%= @guest_reviews.count %>)</h4>
+        <div class="row">
+          <%= render "reviews/guest_list" %>
+        </div>
+      <% else %>
+      <% end %>
+      <br/>
+      
+      <% if @host_reviews.count > 0 %>
+        <h4>Reviews From Hosts (<%= @host_reviews.count %>)</h4>
+        <div class="row">
+          <%= render "reviews/host_list" %>
+        </div>
+      <% else %>
+      <% end %>  
+    </div>                     
+    
+    <div class="row">
+      <div class="col-lg-3">
       <div class="alert alert-warning alert-dismissible d-none d-lg-block" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <span class="alert-link"></span> You are awesome! Keep doing great things!
       </div>
     </div>
+    </div>                                              
   </div>
 </div>
 
