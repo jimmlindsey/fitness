@@ -31,6 +31,15 @@ h4 {
   }
 }
 
+.text-blue, .icon-blue {
+  color: $primary;
+}
+
+.banner {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 /* Navigation */
 .navbar-default {
   background-color: #FFFFFF;

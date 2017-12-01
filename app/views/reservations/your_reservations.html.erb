@@ -22,8 +22,8 @@
               <% room.reservations.each do |reservation| %>
                   <div class="row">
                     <div class="col-md-3">
-                      <%= reservation.start_date.strftime('%D') %> to
-                      <%= reservation.end_date.strftime('%D') %>
+                      <%= reservation.start_date.strftime('%v') %> to
+                      <%= reservation.end_date.strftime('%v') %>
                     </div>
                     <div class="col-md-6">
                       <%= link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
