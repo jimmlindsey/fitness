@@ -35,10 +35,6 @@ h4 {
   color: $primary;
 }
 
-.banner {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
 
 /* Navigation */
 .navbar-default {
@@ -455,4 +451,43 @@ input[type="checkbox"]:checked:before {
   color: #d43242;
   font-size: 14px;
   padding-top: 10px;
+}
+
+// SEARCH
+#main {
+  height: 100%;
+  overflow: hidden;
+}
+
+#left {
+  padding: 10px 400px 10px 20px;
+  overflow: scroll;
+  height: 100%;
+}
+
+#right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+}
+
+.map_price {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: $primary;
+}
+
+// HOME PAGE
+.discovery-card {
+  background-size: cover;
+  background-position: center;
+  height: 326px;
+}
+
+.banner {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
