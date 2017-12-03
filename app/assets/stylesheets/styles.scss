@@ -120,6 +120,11 @@ h4 {
   padding-top: 80px;
 }
 
+.container.cities {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 
 /* Button */
 .btn.btn-new {
@@ -484,10 +489,18 @@ input[type="checkbox"]:checked:before {
 .discovery-card {
   background-size: cover;
   background-position: center;
-  height: 326px;
+  height: 400px;
 }
 
 .banner {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.section.bordered {
+  margin-top: 80px;
+  border-top: 2px solid $border;
+  border-bottom: 2px solid $border;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

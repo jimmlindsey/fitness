@@ -68,22 +68,15 @@
             <label>Listings</label>
               (<%= @rooms.length %>)
                 <div class="row">
-                  <% @rooms.each do |room| %>
-                    <div class="col-md-4">
-                      <div class="panel panel-default">
-                        <div class="panel-heading preview">
-                          <%= image_tag room.cover_photo(:medium) %>
-                        </div>
-                        <div class="panel-body">
-                          <%= link_to room.listing_name, room %>
-                        </div>
-                      </div>
-                    </div>
-                  <% end %>
+                  <div class="row">
+                    <br>
+                    <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
+                  </div>
                 </div>
           </div>
         </div>
       </div>
+      <br>
       <% if @guest_reviews.count > 0 %>
       <h4>Reviews From Guests (<%= @guest_reviews.count %>)</h4>
         <div class="row">
@@ -91,7 +84,7 @@
         </div>
       <% else %>
       <% end %>
-      <br/>
+      <br>
       
       <% if @host_reviews.count > 0 %>
         <h4>Reviews From Hosts (<%= @host_reviews.count %>)</h4>

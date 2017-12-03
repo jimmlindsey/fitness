@@ -23,33 +23,21 @@
       </div>
     </div>
   <% end %>
+</div>
 
-  <br/><hr/><br/>
-
-  <!-- Gyms -->
-  <div><h2>Gyms</h2></div>
+<div class="section bordered">
+  <div class="container">
+    <!-- Gyms -->
+    <div><h2>Gyms</h2></div>
     <div class="row">
       <br>
-      <% @rooms.each do |room| %>
-        <div class="col-md-3">
-          <div class="panel panel-default">
-            <div class="panel-heading preview">
-              <%= image_tag room.cover_photo(:medium) %>
-            </div>
-            <div class="panel-body">
-              <%= link_to room.listing_name, room %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
     </div>
-       
-  <br/>
-
-  <div class="row">
-  </div> 
+   </div>
+</div>
 
   <!-- CITIES -->
+<div class="container cities">
   <div><h2>Cities</h2></div>
   <div class="row">
     <br>
