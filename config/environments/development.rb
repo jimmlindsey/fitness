@@ -64,15 +64,15 @@ Rails.application.configure do
     password: '0f8581fc9fd48c2c594e2946eaf9b351'
   }
   
-  config.paperclip_defaults = {
-    storage: :s3,
-    path: ':class/:attachment/:id/:style/:filename',
-    s3_host_name: 's3-us-west-1.amazonaws.com',
-    s3_credentials: {
-      bucket: 'evergym',
-      access_key_id: ENV["amazon_access_key_id"],
-      secret_access_key: ENV["amazon_secret_access_key"],
-      s3_region: 'us-west-1'
-    }
-  }
+  #config.paperclip_defaults = {
+    #storage: :s3,
+    #path: ':class/:attachment/:id/:style/:filename',
+    #s3_host_name: 's3-us-west-1.amazonaws.com',
+    #s3_credentials: {
+      #bucket: 'evergym',
+      #access_key_id: ENV["amazon_access_key_id"],
+      #secret_access_key: ENV["amazon_secret_access_key"],
+      #s3_region: 'us-west-1'
+    #}
+  #}
 end

@@ -1,0 +1,69 @@
+<div class="container pt-4 pb-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card card-profile mb-4">
+        <div class="card-header" style="background-image: url(assets/img/iceland.jpg);"></div>
+        <div class="card-body text-center">
+          <% if current_user.avatar.blank? %>
+            <%= image_tag current_user.avatar.url, class: "card-profile-img" %>
+          <% else %>
+            <%= image_tag("missing.png", class: "card-profile-img")  %>
+          <% end %>
+
+          <h6 class="card-title">
+            <h5><strong><%= current_user.fullname %></strong></h5>
+          </h6>
+        </div>
+      </div>
+
+      <div class="card d-md-block d-lg-block mb-4">
+        <div class="card-body">
+          <ul class="list-unstyled list-spaced">
+            <% if current_user.confirmation_token %>
+              <li>Email Address<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+              <hr>
+            <% end %>
+            <% if current_user.provider %>
+              <li>Facebook<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+              <hr>
+            <% end %>
+            <% if current_user.phone_verified %>
+              <li>Phone Number<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+            <% else %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <div class="card d-md-block d-lg-block mb-4">
+        <div class="card-body">
+          <div class="container">
+            <label>Notifications</label>
+          </div>
+        </div>
+      </div>
+      <br>
+      
+      <br>
+      
+      
+    </div>
+    
+    <div class="col-md-9">
+      <div class="card d-md-block d-lg-block mb-4">
+        <div class="card-body">
+          <div class="container">
+            <br>
+            <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+
+
+
