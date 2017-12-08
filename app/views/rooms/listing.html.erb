@@ -23,6 +23,14 @@
                                   id: "room_type", prompt: "Select...", class: "form-control" %>
                   </div>
                 </div>
+                
+                <div class="col-md-4 select">
+                  <div class="form-group">
+                    <label>Booking Type</label>
+                    <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>
+              
               </div>
               <div><%= f.submit "Save", class: "btn btn-new" %></div>
             <% end %>

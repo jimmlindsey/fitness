@@ -6,7 +6,7 @@
         <span class="alert-link"></span> This is the very beginning of your Listing!
       </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-9">
       <div class="card d-md-block d-lg-block mb-4">
         <div class="card-body">
           <div class="container">
@@ -20,6 +20,14 @@
                                   id: "room_type", prompt: "Select...", class: "form-control" %>
                   </div>
                 </div>
+                  
+                <div class="col-md-4 select">
+                  <div class="form-group">
+                    <label>Booking Type</label>
+                    <%= f.select :instant, Room.instants.map {|key,value| [key.humanize, key]}, selected: 'Instant', prompt: "Select...", class: "form-control" %>
+                  </div>
+                </div>
+               
               </div>
               <div><%= f.submit "Create Listing", class: "btn btn-new" %></div>
             <% end %>

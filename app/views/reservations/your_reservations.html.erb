@@ -24,6 +24,15 @@
                     <div class="col-md-3">
                       <%= reservation.start_date.strftime('%v') %> to
                       <%= reservation.end_date.strftime('%v') %>
+                      <br>
+                      <br>
+                      <p><%= reservation.status %></p>
+                      <div class="form-inline">
+                        <% if reservation.Waiting? %>
+                          <%= link_to approve_reservation_path(reservation), method: :post do %> <i class="fa fa-thumbs-up fa-lg text-babu"></i> <% end %> |
+                          <%= link_to decline_reservation_path(reservation), method: :post do %> <i class="fa fa-thumbs-down fa-lg text-babu"></i> <% end %>
+                        <% end %>
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <%= link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
@@ -39,7 +48,7 @@
                       </span>
                     </div>
                     <div class="col-md-3 text-right">
-                      <%= render partial: "reviews/host_form", locals: {reservation: reservation} %>
+                      <%= render partial: "reviews/host_form", locals: {reservation: reservation} if reservation.Approved? %>
                     </div>
                   </div>
                   <hr/>
