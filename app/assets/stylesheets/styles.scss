@@ -485,7 +485,7 @@ input[type="checkbox"]:checked:before {
   color: $primary;
 }
 
-// HOME PAGE
+/* HOME PAGE */
 .discovery-card {
   background-size: cover;
   background-position: center;
@@ -503,4 +503,36 @@ input[type="checkbox"]:checked:before {
   border-bottom: 2px solid $border;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+
+/* CALENDAR */
+.fc-content.Waiting {
+  background-color: $secondary;
+}
+
+.fc-past {
+  background-color: $border;
+}
+
+.fc-day {
+  position: relative;
+}
+
+.fc-content {
+  background-color: $secondary;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.fc-event {
+  border: 0px;
+  background-color: transparent;
+}
+
+.fc-title {
+  font-size: 14px;
+  position: relative;
+  top: 7px;
+  left: 20px;
 }

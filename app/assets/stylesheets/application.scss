@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
+@import "fullcalendar";
 
 $white:                           #ffffff;
 $black:                           #000000;
@@ -9,6 +10,8 @@ $medium:                          #7a8b8e;
 $light:                           #9a9da4;
 $primary:                         #4285f4;
 $secondary:                       #34a853;
+$tertiary:                        #fbbc05;
+$quaternary:                      #ea4335;
 $border:                          #e8e8e8;
 $background:                      #f5f8fa;
 $facebook:                        #3b5998;
