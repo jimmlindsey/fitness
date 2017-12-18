@@ -2,226 +2,223 @@
 <div class="container pt-4 pb-5">
   <div class="row">
     <div class="col-md-12">
-      <div class="card d-md-block d-lg-block mb-4">
-        <div class="card-body">
-          <div class="container">
-            <br>
-            <%= image_tag @room.cover_photo(nil), width: "100%" %>
-          </div>
-          <div class="container">
+      <div class="container">
+        <br>
+        <%= image_tag @room.cover_photo(nil), width: "100%" %>
+      </div>
+      <div class="container">
+        <div class="row">
+
+          <!-- LEFT PANEL -->
+          <div class="col-md-8">
+
+            <!-- Listing Name -->
             <div class="row">
-
-              <!-- LEFT PANEL -->
               <div class="col-md-8">
-
-                <!-- Listing Name -->
-                <div class="row">
-                  <div class="col-md-8">
-                    <h1><%= @room.listing_name %></h1>
-                    <%= @room.address %>
-                  </div>
-                  <div class="col-md-4 text-center">
-                    <br>
-                    <% if !@room.user.avatar.blank? %>
-                      <%= image_tag(@room.user.avatar.url(:thumb), class: "img-circle avatar-large") %>
-                    <% else %>
-                      <%= image_tag("missing.png", class: "card-profile-img")  %>
-                    <% end %>
-                    <br/><br/>
-                    <%= link_to user_path(@room.user) do %>
-                      <%= @room.user.fullname %>
-                  <% end %>
-                  </div>
-                </div>
-                <hr/>
-
-                <!-- Room Info -->
-                <div class="row text-babu">
-                  <div class="row text-center row-space-1">
-                    <div class="col-md-3">
-                      <i class="fa fa-building-o fa-2x"></i>
-                    </div>
-                  </div>
-
-                  <div class="row text-center">
-                    <div class="col-md-3"><%= @room.room_type %></div>
-                  </div>
-
-                </div>
-                <hr/>
-
-                <!-- About -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <h3>About This Listing</h3>
-                    <p><%= @room.summary %></p>
-                  </div>
-                </div>
-                <hr/>
-
-                <!-- Amenities -->
-                <div class="row">
-                  <div class="col-md-3">
-                    <h3>Amenities</h3>
-                  </div>
-
-                  <div class="col-md-9">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <ul class="amenities">
-                          <li class="<%= 'text-line-through' if !@room.is_weights %>">Free Weights</li>
-                          <li class="<%= 'text-line-through' if !@room.is_shower %>">Shower</li>
-                          <li class="<%= 'text-line-through' if !@room.is_towel %>">Towel Service</li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6">
-                        <ul class="amenities">
-                          <li class="<%= 'text-line-through' if !@room.is_yoga %>">Yoga equipment</li>
-                          <li class="<%= 'text-line-through' if !@room.is_cycling %>">Cycling</li>
-                          <li class="<%= 'text-line-through' if !@room.is_boxing %>">Boxing equipment</li>
-                        </ul>
-                      </div>
-
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <ul class="amenities">
-                          <li class="<%= 'text-line-through' if !@room.is_pilates %>">Pilates equipment</li>
-                          <li class="<%= 'text-line-through' if !@room.is_pool %>">Swimming pool</li>
-                          <li class="<%= 'text-line-through' if !@room.is_basketball %>">Basketball court</li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6">
-                        <ul class="amenities">
-                          <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
-                          <li class="<%= 'text-line-through' if !@room.is_lounge %>">Lounge</li>
-                          <li class="<%= 'text-line-through' if !@room.is_childcare %>">Childcare</li>
-                        </ul>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-                <hr/>
-
-                <!-- Carousel -->
-                  <div class="row">
-
-                    <% if @photos.length > 0 %>
-                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                          <% @photos.each do |photo| %>
-                              <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
-                          <% end %>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                          <% @photos.each do |photo| %>
-                              <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                                <%= image_tag photo.image.url() %>
-                              </div>
-                          <% end %>
-                        </div>
-
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                          <span class="glyphicon glyphicon-chevron-left"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                          <span class="glyphicon glyphicon-chevron-right"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                    <% end %>
-
-                  </div>
-                <hr/>
-
-                <!-- GOOGLE MAP -->
-                <div class="row">
-
-                  <div id="map" style="width: 100%; height: 400px"></div>
-
-                  <script src="https://maps.googleapis.com/maps/api/js"></script>
-                  <script>
-                      function initialize() {
-                        var location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                          center: location,
-                          zoom: 14
-                        });
-
-                        var marker = new google.maps.Marker({
-                          position: location,
-                          map: map
-                        });
-
-                        var infoWindow = new google.maps.InfoWindow({
-                          content: '<div id="content"><%= image_tag @room.cover_photo(:medium) %></div>'
-                        });
-
-                        infoWindow.open(map, marker);
-                      }
-
-                      google.maps.event.addDomListener(window, 'load', initialize);
-                  </script>
-
-                </div>
-                <hr/>
-
-                <!-- NEAR BY ROOMS -->
-                  <div class="row">
-                    <h3>Nearby</h3>
-                    <br>
-                    <% for room in @room.nearbys(5).max(6).shuffle %>
-                        <div class="col-md-4">
-                          <div class="panel panel-default">
-                            <div class="panel-heading preview">
-                              <%= image_tag room.cover_photo(:medium) %>
-                            </div>
-                            <div class="panel-body">
-                              <%= link_to room.listing_name, room %><br/>
-                              (<%= room.distance.round(2) %> miles away)
-                            </div>
-                          </div>
-                        </div>
-                    <% end %>
-                  </div>
-                  
-                <!-- REVIEWS -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <h3>
-                      <%= pluralize(@guest_reviews.count, "Review") %> &nbsp;
-                      <span id="average_rating"></span>
-                    </h3>
-                    <div class="container">
-                      <div><%= render "reviews/guest_list" %></div>
-                    </div>
-                  </div>
-                </div>
-                <br/>
-                <hr/>
-
+                <h1><%= @room.listing_name %></h1>
+                <%= @room.address %>
               </div>
-
-
-              <!-- RIGHT PANEL -->
-              <div class="col-md-4">
+              <div class="col-md-4 text-center">
                 <br>
-                <%= render 'reservations/form' %>
+                <% if !@room.user.avatar.blank? %>
+                  <%= image_tag(@room.user.avatar.url(:thumb), class: "img-circle avatar-large") %>
+                <% else %>
+                  <%= image_tag("missing.png", class: "card-profile-img")  %>
+                <% end %>
+                <br/><br/>
+                <%= link_to user_path(@room.user) do %>
+                  <%= @room.user.fullname %>
+              <% end %>
               </div>
             </div>
+            <hr/>
+
+            <!-- Room Info -->
+            <div class="row text-babu">
+              <div class="row text-center row-space-1">
+                <div class="col-md-3">
+                  <i class="fa fa-building-o fa-2x"></i>
+                </div>
+              </div>
+
+              <div class="row text-center">
+                <div class="col-md-3"><%= @room.room_type %></div>
+              </div>
+
+            </div>
+            <hr/>
+
+            <!-- About -->
+            <div class="row">
+              <div class="col-md-12">
+                <h3>About This Listing</h3>
+                <p><%= @room.summary %></p>
+              </div>
+            </div>
+            <hr/>
+
+            <!-- Amenities -->
+            <div class="row">
+              <div class="col-md-3">
+                <h3>Amenities</h3>
+              </div>
+
+              <div class="col-md-9">
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="amenities">
+                      <li class="<%= 'text-line-through' if !@room.is_weights %>">Free Weights</li>
+                      <li class="<%= 'text-line-through' if !@room.is_shower %>">Shower</li>
+                      <li class="<%= 'text-line-through' if !@room.is_towel %>">Towel Service</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="amenities">
+                      <li class="<%= 'text-line-through' if !@room.is_yoga %>">Yoga equipment</li>
+                      <li class="<%= 'text-line-through' if !@room.is_cycling %>">Cycling</li>
+                      <li class="<%= 'text-line-through' if !@room.is_boxing %>">Boxing equipment</li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul class="amenities">
+                      <li class="<%= 'text-line-through' if !@room.is_pilates %>">Pilates equipment</li>
+                      <li class="<%= 'text-line-through' if !@room.is_pool %>">Swimming pool</li>
+                      <li class="<%= 'text-line-through' if !@room.is_basketball %>">Basketball court</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="amenities">
+                      <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
+                      <li class="<%= 'text-line-through' if !@room.is_lounge %>">Lounge</li>
+                      <li class="<%= 'text-line-through' if !@room.is_childcare %>">Childcare</li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <hr/>
+
+            <!-- Carousel -->
+              <div class="row">
+
+                <% if @photos.length > 0 %>
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <% @photos.each do |photo| %>
+                          <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
+                      <% end %>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <% @photos.each do |photo| %>
+                          <div class="item <%= 'active' if photo.id == @photos[0].id %>">
+                            <%= image_tag photo.image.url() %>
+                          </div>
+                      <% end %>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                <% end %>
+
+              </div>
+            <hr/>
+
+            <!-- GOOGLE MAP -->
+            <div class="row">
+
+              <div id="map" style="width: 100%; height: 400px"></div>
+
+              <script src="https://maps.googleapis.com/maps/api/js"></script>
+              <script>
+                  function initialize() {
+                    var location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                      center: location,
+                      zoom: 14
+                    });
+
+                    var marker = new google.maps.Marker({
+                      position: location,
+                      map: map
+                    });
+
+                    var infoWindow = new google.maps.InfoWindow({
+                      content: '<div id="content"><%= image_tag @room.cover_photo(:medium) %></div>'
+                    });
+
+                    infoWindow.open(map, marker);
+                  }
+
+                  google.maps.event.addDomListener(window, 'load', initialize);
+              </script>
+
+            </div>
+            <hr/>
+
+            <!-- NEAR BY ROOMS -->
+              <div class="row">
+                <h3>Nearby</h3>
+                <br>
+                <% for room in @room.nearbys(5).max(6).shuffle %>
+                    <div class="col-md-4">
+                      <div class="panel panel-default">
+                        <div class="panel-heading preview">
+                          <%= image_tag room.cover_photo(:medium) %>
+                        </div>
+                        <div class="panel-body">
+                          <%= link_to room.listing_name, room %><br/>
+                          (<%= room.distance.round(2) %> miles away)
+                        </div>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+
+            <!-- REVIEWS -->
+            <div class="row">
+              <div class="col-md-12">
+                <h3>
+                  <%= pluralize(@guest_reviews.count, "Review") %> &nbsp;
+                  <span id="average_rating"></span>
+                </h3>
+                <div class="container">
+                  <div><%= render "reviews/guest_list" %></div>
+                </div>
+              </div>
+            </div>
+            <br/>
+            <hr/>
+
+          </div>
+
+
+          <!-- RIGHT PANEL -->
+          <div class="col-md-4">
+            <br>
+            <%= render 'reservations/form' %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <br>
 
 <script>

@@ -58,14 +58,7 @@
     
     <% if !current_user.rooms.blank? %>
       <div class="col-md-9">
-        <div class="card d-md-block d-lg-block mb-4">
-          <div class="card-body">
-            <div class="container">
-              <br>
-                <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
-            </div>
-          </div>
-        </div>  
+        <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
       </div>
     <% else %>
     <% end %>
