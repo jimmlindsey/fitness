@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  
+  get 'host' , to: 'pages#host'
+  get 'terms' , to: 'pages#terms'
+  get 'privacy' , to: 'pages#privacy'
 
   devise_for :users,
              path: '',

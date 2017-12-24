@@ -2,6 +2,15 @@ class PagesController < ApplicationController
   def home
     @rooms = Room.where(active: true).limit(3)
   end
+  
+  def terms
+  end
+  
+  def privacy
+  end
+  
+  def host
+  end
 
   def search
     # STEP 1

@@ -1,4 +1,4 @@
-<div class="container pt-4 pb-5">
+<div class="container content">
   <div class="row">
     <div class="col-md-3 col-lg-3">
       <div class="card d-md-block d-lg-block mb-4">
@@ -13,26 +13,27 @@
       <div class="card d-md-block d-lg-block mb-4">
         <div class="card-body">
           <div class="container">
-            <%= form_for @room do |f| %>
+          <%= form_for @room do |f| %>
 
-                <div class="row">
-                  <div class="form-group">
-                    <label>Listing name</label>
-                      <%= f.text_field :listing_name, placeholder: "What is your listing name?", class: "form-control", required: true %>
-                  </div>
-                </div>
+            <div class="row">
+              <div class="form-group">
+              <label>Listing name</label>
+                <%= f.text_field :listing_name, placeholder: "What is your listing name?", class: "form-control", required: true %>
+              </div>
+            </div>
 
-                  <div class="row">
-                    <div class="form-group">
-                      <label>Summary</label>
-                      <%= f.text_area :summary, rows: 5, placeholder: "Tell us about your gym.", class: "form-control", required: true %>
-                    </div>
-                  </div>
+            <div class="row">
+              <div class="form-group">
+              <label>Summary</label>
+                <%= f.text_area :summary, rows: 5, placeholder: "Tell us about your gym.", class: "form-control", required: true %>
+              </div>
+            </div>
 
-                <div class="text-center">
-                  <%= f.submit "Save", class: "btn btn-new" %>
+            <div class="text-center">
+              <%= f.submit "Save", class: "btn btn-new" %>
             <% end %>
 
+          </div>
           </div>
         </div>
       </div>

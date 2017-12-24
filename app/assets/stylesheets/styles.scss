@@ -1,6 +1,7 @@
 body {
   font-family: "proxima-nova", sans-serif;
   padding-top: 55px;
+  letter-spacing: 0.3px;
 }
 
 h1 {
@@ -9,8 +10,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: 800;
+  font-size: 1.6em;
+  font-weight: 600;
 }
 
 h3 {
@@ -27,7 +28,7 @@ h4 {
   list-style: none;
   line-height: 2;
   a {
-    color: $dark
+    color: $dark;
   }
 }
 
@@ -39,10 +40,163 @@ h4 {
   font-weight: 600;
 }
 
+.home {
+  background-color: $white;
+  margin-top: 0px;
+}
+
+.header {
+  color: $white;
+}
+
+
+/* Host */
+.host {
+  background-image: url('host.jpg'); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  min-height: 750px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+.host-header {
+  color: $black;
+  padding-top: 200px;
+  
+  h4 {
+    font-size: 1em;
+    font-weight: 500px;
+  }
+}
+
+.capital {
+  text-transform: uppercase;
+}
+
+.why-host {
+  background-color: $white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  
+  p {
+    font-size: 1.1em;
+    font-weight: 300;
+  }
+}
+
+.how-to {
+  background-color: $white;
+  min-height: 750px;
+  border-top: 1px solid $border;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 40px;
+  padding-left: 40px;
+  
+  h1 {
+    font-size: 2.2em;
+  }
+  
+  h2 {
+    font-size: 2.0em;
+  }
+  
+  p {
+    font-size: 1.2em;
+    font-weight: lighter;
+  }
+  
+  .pic {
+    padding-bottom: 50px;
+  }
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+.number {
+  font-size: 3em;
+  color: $tertiary;
+  font-weight: lighter;
+}
+
+.start-hosting {
+  background-image: url('start.jpg'); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  
+  h1 {
+    font-size: 2.3em;
+    color: $white;
+    padding-top: 200px;
+  }
+}
+
+.btn.btn-start {
+  border: 2px solid $primary;
+  border-radius: 0.25rem;
+  background-color: $primary !important;
+  color: $white;
+  padding: 10px 25px 10px 25px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.btn.btn-start:hover {
+  background: $primary;
+  color: $white;
+}
+
+.faq-list {
+  background-color: $white;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  padding-right: 40px;
+  padding-left: 40px;
+  
+  h1 {
+    font-size: 2.2em;
+  }
+  
+  .panel {
+    box-shadow: none;
+  }
+  
+  .panel-heading {
+    border: none;
+  }
+  
+  h3 {
+    text-transform: uppercase;
+  }
+  
+  .panel-title {
+    color: $secondary;
+  }
+}
+
+
 
 /* Navigation */
 .navbar-default {
-  background-color: #FFFFFF;
+  background-color: $white;
 }
 
 .navbar-default .navbar-brand {
@@ -105,6 +259,7 @@ h4 {
 .container.content {
   min-height: 740px;
   padding-top: 50px;
+  margin-bottom: 100px;
 }
 
 .container.content.form {
@@ -570,16 +725,17 @@ input[type="checkbox"]:checked:before {
 }
 
 .banner {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding-top: 80px;
+  background-image: url('trainer.jpg');
+  background-repeat: none;
+  background-size: cover;
+  min-height: 600px;
+  margin-top: -6px;
 }
 
 .section.bordered {
-  margin-top: 80px;
-  border-top: 2px solid $border;
-  border-bottom: 2px solid $border;
+  border-top: 1px solid $border;
   padding-top: 50px;
-  padding-bottom: 50px;
 }
 
 
@@ -704,7 +860,6 @@ input[type="checkbox"]:checked:before {
 /* Footer */
 
 .footer {
-  margin-top: 100px;
   padding-top: 40px;
   padding-bottom: 40px;
   font-size: 1em;
@@ -712,7 +867,11 @@ input[type="checkbox"]:checked:before {
   padding-right: 10px;
   border: none;
   border-top: 1px solid $border;
-  background-color: $background;
+  background-color: $white;
+  
+  h6 {
+    font-size: 1em;
+  }
 }
 
 .footer li {
@@ -723,4 +882,9 @@ input[type="checkbox"]:checked:before {
 
 .text-muted.pull-left {
   margin-left: -25px;
+}
+
+.footer-nav,.footer-nav li {
+  display:inline-block; 
+  padding-right: 10px;
 }

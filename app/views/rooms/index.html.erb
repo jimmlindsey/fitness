@@ -1,49 +1,50 @@
 <div class="container content">
- <div class="container pt-4 pb-5">
-  <div class="row">
-    <div class="col-md-3 col-lg-3">
-      <div class="card d-md-block d-lg-block mb-4">
-        <div class="card-body">
+  <div class="container pt-4 pb-5">
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <div class="card d-md-block d-lg-block mb-4">
+          <div class="card-body">
           <ul class="sidebar">
-            <li><%= link_to "Listings", rooms_path, class: "sidebar-link active" %></li>
-            <li class="sidebar-item"><%= link_to "Reservations", your_reservations_path, class: "sidebar-link" %></li>
-            <li class="sidebar-item"><%= link_to "Your Bookings", your_bookings_path, class: "sidebar-link" %></li>
+          <li><%= link_to "Listings", rooms_path, class: "sidebar-link active" %></li>
+          <li class="sidebar-item"><%= link_to "Reservations", your_reservations_path, class: "sidebar-link" %></li>
+          <li class="sidebar-item"><%= link_to "Your Bookings", your_bookings_path, class: "sidebar-link" %></li>
           </ul>
-        </div>
-      </div>
-    </div>
-    <% if @rooms.count > 0 %>
-    <div class="col-md-9">
-      <div class="card d-md-block d-lg-block mb-4">
-        <div class="card-body">
-          <div class="container">
-            <label><h2>Listings</h2></label>
-            <% @rooms.each do |room| %>
-              <div class="row">
-                <div class="col-md-2">
-                  <%= image_tag room.cover_photo(:thumb) %>
-                </div>
-                <div class="col-md-7">
-                  <h4><%= room.listing_name %></h4>
-                </div>
-                <div class="col-md-3 right">
-                  <%= link_to "Update", listing_room_path(room), class: "btn btn-new" %>
-                </div>
-              </div>
-              <hr/>
-            <% end %>
           </div>
         </div>
       </div>
+    <% if @rooms.count > 0 %>
+      <div class="col-md-9">
+        <div class="card d-md-block d-lg-block mb-4">
+          <div class="card-body">
+            <div class="container">
+              <label><h2>Listings</h2></label>
+              <% @rooms.each do |room| %>
+              <div class="row">
+              <div class="col-md-2">
+                <%= image_tag room.cover_photo(:thumb) %>
+              </div>
+              <div class="col-md-7">
+                <h4><%= room.listing_name %></h4>
+              </div>
+              <div class="col-md-3 right">
+                <%= link_to "Update", listing_room_path(room), class: "btn btn-new" %>
+              </div>
+              </div>
+              <hr/>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="col-md-6 text-center">
+        <h1>You don't have any listings.</h1>
+        <a href="/rooms/new" role="button" class="text-babu">
+          <i class="fa fa-plus-circle fa-3x"></i>
+        </a>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
-    <% else %>
-    <div class="col-md-6 text-center">
-      <h1>You don't have any listings.</h1>
-      <a href="/rooms/new" role="button" class="text-babu">
-        <i class="fa fa-plus-circle fa-3x"></i>
-      </a>
-    </div>
-    <% end %>
-</div>
+    
