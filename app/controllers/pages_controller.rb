@@ -6,10 +6,31 @@ class PagesController < ApplicationController
   def terms
   end
   
+  def host
+  end
+  
+  def nondiscrimination
+  end
+  
+  def payments
+  end
+  
   def privacy
   end
   
-  def host
+  def host_guarantee
+  end
+  
+  def guest_refund
+  end
+  
+  def copyright
+  end
+  
+  def cookie
+  end
+  
+  def guest_waiver
   end
 
   def search
